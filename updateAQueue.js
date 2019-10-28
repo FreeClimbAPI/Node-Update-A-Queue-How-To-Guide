@@ -1,8 +1,8 @@
 require('dotenv').config()
-const persephonySDK = require('@persephony/sdk')
+const freeclimbSDK = require('@freeclimb/sdk')
 const accountId = process.env.ACCOUNT_ID
 const authToken = process.env.AUTH_TOKEN
-const persephony = persephonySDK(accountId, authToken)
+const freeclimb = freeclimbSDK(accountId, authToken)
 
 // New queue options
 const options = {
@@ -11,7 +11,7 @@ const options = {
 }
 
 // Invoke the update queue resource
-persephony.api.queues.update(queueId, options).then(queue => {
+freeclimb.api.queues.update(queueId, options).then(queue => {
   // Use updated Queue
 }).catch(err => {
   // Handle Errors
